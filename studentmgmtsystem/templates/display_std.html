@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,th{
+            border: 1px solid black;
+            background-color: white;
+        }
+        body{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="add_std" method="post">
+        {% csrf_token %}
+        <p>Roll_no : <input type="number" placeholder="roll_no" name="roll_no"></p>
+        <p>Name : <input type="text" placeholder="name" name="name"></p>
+        <p>Age : <input type="number" placeholder="age" name="age"></p>
+        <p>Email : <input type="email" placeholder="email" name="email"></p>
+        <p>Phone : <input type="tel" placeholder="phone" name="phone"></p>
+        <input type="submit" value="add">
+    </form>
+
+    <table>
+        <tr>
+            <th>roll_no</th>
+            <th>name</th>
+            <th>age</th>
+            <th>email</th>
+            <th>phone</th>
+        </tr>
+        {% for std in data %}
+        <tr>
+            <td>{{std.roll_no}}</td>
+            <td>{{std.name}}</td>
+            <td>{{std.age}}</td>
+            <td>{{std.email}}</td>
+            <td>{{std.phone}}</td>
+            <td>
+                <a href="edit_std/{{std.pk}}">Edit</a>
+                <a href="delete_std/{{std.pk}}">Delete</a>
+            </td>
+        </tr>
+    
+        {% endfor %}
+        
+    </table>
+    
+</body>
+</html>
