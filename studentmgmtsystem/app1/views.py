@@ -32,7 +32,7 @@ def edit_std(req,id):
         std_age=req.POST["age"]
         std_email=req.POST["email"]
         std_phno=req.POST["phone"]
-        Student.objects.filter(pk=id).update(roll_no=roll,name=std_name,age=std_age,email=std_email,phone=std_phno)    #-------> (field given in model=variable created in function)
+        Student.objects.filter(pk=id).update(roll_no=roll,name=std_name,age=std_age,email=std_email,phone=std_phno)    #--------> (field given in model=variable created in function)
         return redirect(disp_std)
     else:
         return render(req,'edit_std.html',{'data':data})
