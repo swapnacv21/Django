@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from .models import *
-
+import os
+from django.contrib.auth.models import User
+from django.contrib import messages
 
 # Create your views here.
 
@@ -17,6 +19,9 @@ def shop_login(req):
                 login(req,data)
                 req.session['shop']=uname    #--------------->creating session
                 return redirect(shop_home)
+            else:
+                messages.warning(req,"Invalid username or password")
+                return redirect(shop_login)
         return render(req,'login.html')
 
 def shop_logout(req):
@@ -61,5 +66,28 @@ def edit_product(req,id):
         return redirect(shop_home)
     return render(req,'shop/edit_product.html',{'data':pro})
 
-# def delete function create
+
+def delete_product(req,id):
+    data=Product.objects.get(pk=id)
+    url=data.img.url
+    url=url.split('/')[-1]
+    os.remove('media/'+url)
+    data.delete()
+    return redirect(shop_home)
+
+def register(req):
+    if req.method=='POST':
+        name=req.POST['name']
+        email=req.POST['email']
+        password=req.POST['password']
+        try:
+            data=User.objects.create_user(first_name=name,email=email,password=password,username=email)
+            data.save()
+            return redirect(shop_login)
+        except:
+            messages.warning(req,"Email Exists")
+            return redirect(register)
+    else:
+        return render(req,'user/register.html')
+    
 
