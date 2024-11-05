@@ -22,5 +22,5 @@ urlpatterns=[
 
 
     #------------------------------------------user-------------------------------------
-    path('register',views.register)
+    path('register',views.register),
 ]

@@ -7,3 +7,10 @@ class Product(models.Model):
     price=models.IntegerField()
     offer_price=models.IntegerField()
     img=models.FileField()
+
+# class Buy(models.Model):
+    # user=models.ForeignKey(User,on_delete=models.CASCADE)
+    # product=models.ForeignKey(Product,on_delete=models.CASCADE)
+    # price=models.IntegerField()
+    # date=models.DateField(auto_now_add=True)
+    # ----------------------> after this ---> makemigrations--->migrate------>runserver

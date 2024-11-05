@@ -91,3 +91,19 @@ def register(req):
         return render(req,'user/register.html')
     
 
+
+
+
+
+
+    
+# ---------------------->code for but product:
+
+# def buy_pro(req,id):
+    # product=Product.objects.get(pk=id)
+    # user=User.objects.get(username=req.session['user])
+    # price=product.offer_price
+    # data=Buy.objects.create(user=user,product=product,price=price)
+    # data.save()
+    # return redirect(user_home)
+    # ----------------------> after this ---> makemigrations--->migrate------>runserver
