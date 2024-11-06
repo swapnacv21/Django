@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="bookmyshow.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white;">
+        <a class="navbar-brand" href="#"><img src="../static/image/bmslogo.png" alt="" style="padding-left: 5%;"></a>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <!-- </button> -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <form action="" class="d-flex " style="padding-left: 9%; ">
+                            <input type="text" class="form-control me-1 srch" placeholder="Search for Movies,Events,Plays,Sports and Activities..." style="width: 450px;padding: 1%;padding-left: 7.5%;">
+                            <i class="bi bi-search" style="position: absolute;padding-left: 1%;padding-top: 0.3%;"></i>
+                        </form>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <div class="container" style="padding-left:0px;position: relative;">                                        
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Place
+                                    <span class="caret"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <form action="" class="d-flex" style="height: 1%;padding-top: 1px;">
+                            <button class="btn text-light" style="background-color: rgb(219, 25, 25);width: 100px; padding:7px;position: relative;margin-top: -5px;">Sign in</button>
+                        </form>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#">About</a> -->
+                    <input type="checkbox"id="toggle">
+                    <label for="toggle" class="hamburger">&#9776</label>
+                    <div class="sidebar">
+                        <h2>Hey</h2>
+                        <div class="special-offer">
+                            <img src="{% static 'image/rewards_login.avif' %}" alt="offer icon">
+                        </div>
+                        <div>
+                            <p>Unlock special offers & great benefits</p>
+                            <button>Login/Register</button>
+                        </div>
+                        <ul>
+                            <li><a href=""><i class="bi bi-bell"></i><span style="padding-left: 0;">Nottifications</span></a><li>
+                            <!-- <li><a href=""><i class="bi bi-bell"></i><span style="padding-left: 5%;">Not</span></a></li>
+                            <li><a href=""><i class="bi bi-bell"></i><span style="padding-left: 5%;">Not</span></a></li> -->
+                            <li><a href=""></a>Play credit card</li>
+                            <li><a href=""></a>Help & Support</li>
+                            <li><a href=""></a>Accounts & Settings</li>
+                            <li><a href=""></a>Rewards</li>
+                            <li><a href=""></a>Book a change</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="main">
+        <ul class="fw-light">
+            <li><a href="">Movies</a></li>
+            <li><a href="">Stream</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Plays</a></li>
+            <li><a href="">Sports</a></li>
+            <li><a href="">Activities</a></li>
+            <li><a href="">ListYourShow</a></li>
+            <li><a href="">Corporates</a></li>
+            <li><a href="">Offers</a></li>
+            <li><a href="">Gift Cards</a></li>
+        </ul>
+    </div>
+    <div id="demo" class="carousel slide" data-bs-ride="carousel" style="padding-top: 1%;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'image/first.avif' %}" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/second.avif' %}" alt="" class="d-block" style="width:100%">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/third.avif' %}" alt="New York" class="" style="width:100%">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+    <h3 class="title">Recommended Movies</h3>
+    <div class="movies-list">
+        <div id="demo2" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card-container">
+                        <div class="movie">
+                            <div class="card">
+                                <a href="ARM.html"><img src="{% static 'image/img1.avif' %}" class="card-img" alt=""></a>
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                </div>
+                            </div>
+                            <h3>A.R.M</h3>
+                            <p class="detail">Action/Adventure/Drama</p>
+                        </div>
+                
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img2.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Joker:Folie a Deux</h3>
+                            <p class="detail">Drama/Suspense/Thriller</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img3.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Kishkindha Kaandam</h3>
+                            <p class="detail">Mystery/Thriller</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img4.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Devara - Part 1</h3>
+                            <p class="detail">Action/Drama/Thriller</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img6.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Oru kattil Oru muri</h3>
+                            <p class="detail">Drama/Family/Romantic</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img7.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Meiyazhagan</h3>
+                            <p class="detail">Comedy/Drama</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img8.jpg' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Venom: The Last Dance</h3>
+                            <p class="detail">Action/Adventure/Sci-Fi</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img9.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Pushpaka Vimanam</h3>
+                            <p class="detail">Fantasy/Thriller</p>
+                        </div>
+
+                        <div class="movie">
+                            <div class="card">
+                                <img src="{% static 'image/img10.avif' %}" class="card-img" alt="">
+                                <div class="card-body"></div>
+                            </div>
+                            <h3>Lubber Pandhu</h3>
+                            <p class="detail">Drama/Romantic/sports</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark"></span>
+            </button>
+        </div>
+    </div>
+
+
+
+    <div class="single-img">
+        <img src="{% static 'image/img11(1).avif' %}" alt="" class="responsive-img">
+    </div>
+
+        <div class="enter-list">
+            <h3 class="title-enter"><b>The Best of Entertainment</b></h3>
+            <div class="enter-container">
+                <div class="card">
+                    <img src="{% static 'image/bmshp-desktop-amusement-park-collection-202404190106.avif' %}" class="card-img" alt="" >
+                </div>
+
+                <div class="card">
+                    <img src="{% static 'image/bmshp-desktop-kids-collection-202404190106.avif' %}" class="card-img" alt="">
+                </div>
+
+                <div class="card">
+                    <img src="{% static 'image/comedy-shows-collection-202211140440.avif' %}" class="card-img" alt="">
+                </div>
+                <div class="card">
+                    <img src="{% static 'image/music-shows-collection-202211140440.avif' %}" class="card-img" alt="">
+                </div>
+
+                <div class="card">
+                    <img src="{% static 'image/workshop-and-more-web-collection-202211140440.avif' %}" class="card-img" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="premieres">
+            <img src="{% static 'image/img7.5.d.avif' %}" alt="" class="premieres-img">
+            <h2 class="title">Premieres</h2><h6 class="title-2" style="padding-left: 8%;font-size: 20px;"><p class="fw-light">Brand new releases every Friday</p></h6>
+            <div class="movies-list">
+                <div class="card-container">
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'image/img1.5.avif' %}" class="card-img" alt="">
+                            <div class="card-body">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                            </div>
+                        </div>
+                        <h3>The Layoff Party</h3>
+                        <p class="detail">Hindi</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'image/img2.5.avif' %}" class="card-img" alt="">
+                            <div class="card-body"></div>
+                        </div>
+                        <h3>Sidone in Japan</h3>
+                        <p class="detail">French</p>
+                    </div>
+
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'image/img3.5.avif' %}" class="card-img" alt="">
+                            <div class="card-body"></div>
+                        </div>
+                        <h3>M.S.Dhoni: The Untold story</h3>
+                        <p class="detail">Hindi</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'image/img4.5.avif' %}" class="card-img" alt="">
+                            <div class="card-body"></div>
+                        </div>
+                        <h3>Hoy Maharaja</h3>
+                        <p class="detail">Marathi</p>
+                    </div>
+
+                    <div class="movie">
+                        <div class="card">
+                            <img src="{% static 'image/img5.5.avif' %}" class="card-img" alt="">
+                            <div class="card-body"></div>
+                        </div>
+                        <h3>Shyamchi Aai</h3>
+                        <p class="detail">Marathi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container container-fluid mt-5 ">
+            <h3><b>Trending Searches Right Now</b></h3>
+            <div class="container row mt-4">
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">A.R.M</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Vettaiyan</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Bougaivillea</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Kishkindha Kaandam</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Viswam</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Black</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Jigra</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Meiyazhagan</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Venom: The Last Dance</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="p-3">
+                        <h5 class="text-danger">Martin</h5>
+                        <p>Movies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        
+        
+        <footer style="background-color: rgb(39, 38, 42);width: 100%;height:950px; top: 80px;position: relative;">
+            <h6 style="color: whitesmoke;padding-top: 40px;left: 10px;position: absolute;padding-left: 8%;"><i class="bi bi-shop-window">::</i><b>list Your Show</b>..... Got a show, event, activity or a great experience? Partner with us &amp; get listed on BookMyShow</h6>
+            <div class="customer">
+                <img src="{% static 'image/fo_img.jpg' %}" alt="" style="width: 100%;padding-top: 100px;position: absolute;">
+                <!-- <h1 style="font-size: 17px;left: 6%;padding-top: 40px;padding-left: 8%;color: rgb(193, 192, 192);position: absolute;top: 40px;"><i class="bi bi-envelope-fill"></i><i class="bi bi-pc-display-horizontal"></i><i class="bi bi-cash-stack"></i></h1> -->
+    
+                <div class="fo" style="padding-top: 220px;position: absolute;padding-left: px;">
+                    <div class="container mt-5">
+            <h6 class="text-white fw-light">MOVIES NOW SHOWING IN KOCHI</h6>
+            <div>
+                <p class="text-secondary fw-light">Bougaivillea | Vettaiyan | A.R.M| The Wild Robot | Kishkindha Kaandam | Jigra |Smile 2 |Meiyazhagan | Vicky Vidya Ka Woh Wala Video | Porattu Nadakam</p>
+            </div>
+            <h6 class="text-white mt-5 fw-light">UPCOMING MOVIES IN KOCHI</h6>
+                <div>
+                    <p class="text-secondary fw-light">Love Reddy | Mama ki Lado | Settlement | Dhaka Escape | 1980 Lo Radhekrishna | Rocket Driver | Tabaah | Karuppu Petti | Sir (Tamil) | Paani</p>
+                </div>
+                
+            <h6 class="text-white fw-light mt-5">MOVIES BY LANGUAGE</h6>
+                <div>
+                    <p class="text-secondary fw-light">Movies in English | Movies in Malayalam | Movies in Hindi | Movies in Tamil</p>
+                </div>
+
+            <h6 class="text-white fw-light mt-5">MOVIES NOW SHOWING</h6>
+            <div>
+                <p class="text-secondary fw-light">Vicky Vidya Ka Woh Wala Video | Jigra | The Wild Robot | Vettaiyan | Vettaiyan-The Hunter | Martin | Devara-Part 1 | Viswam | Bohurupi | Bougaivillea</p>
+            </div>
+
+
+            <h6 class="text-white fw-light mt-5">HELP</h6>
+            <div>
+                <p class="text-secondary fw-light">About Us | Contact Us | Current Opening | Press Release | Press Coverage | Sitemap | FAQs | Terms and Conditions | Privacy Policy</p>
+            </div>
+
+            <h6 class="text-white fw-light mt-5">BOOKMYSHOW</h6>
+            <div>
+                <p class="text-secondary fw-light">Trailers | Stream | Offers | List My Show | Gift Cards </p>
+            </div>
+                </div>
+                <div>
+                    <img src="{% static 'image/logo.svg' %}" alt="" style="position: absolute;padding-top:5px;padding-left: 64%;">
+
+                </div>
+            </div>
+            
+            <div class="icon mt-5" style="display: block;">
+                <i class="bi bi-facebook" style="padding: 15px;"></i>
+                <i class="bi bi-whatsapp" style="padding: 15px;"></i>
+                <i class="bi bi-messenger" style="padding: 15px;"></i>
+                <i class="bi bi-instagram" style="padding: 15px;"></i>
+                <i class="bi bi-youtube"style="padding: 15px;"></i>
+            </div>
+            
+        </footer>
+</body>
+</html>
+    

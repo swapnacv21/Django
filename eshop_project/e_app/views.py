@@ -47,6 +47,7 @@ def add_product(req):
         file=req.FILES['img']
         data=Product.objects.create(product_id=id,product_name=name,price=price,offer_price=offer_price,img=file)
         data.save()
+        return redirect(shop_home)
     return render(req,'shop/add_product.html')
 
 
@@ -75,6 +76,15 @@ def delete_product(req,id):
     data.delete()
     return redirect(shop_home)
 
+# ----->admin(view booking details):
+# def bookings(req):
+    # bookings=Buy.objects.all()[::-1][:3] #---->for reverse order and limit to see products
+    # print(bookings)
+    # return render(req,'shop/bookings.html',{'data':bookings})
+
+
+# ---------------------------------------------user--------------------------------------------
+
 def register(req):
     if req.method=='POST':
         name=req.POST['name']
@@ -96,8 +106,10 @@ def register(req):
 
 
 
+
+
     
-# ---------------------->code for but product:
+# ---------------------->code for buy product:
 
 # def buy_pro(req,id):
     # product=Product.objects.get(pk=id)

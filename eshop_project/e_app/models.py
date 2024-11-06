@@ -8,6 +8,7 @@ class Product(models.Model):
     offer_price=models.IntegerField()
     img=models.FileField()
 
+# model for view booked product details :
 # class Buy(models.Model):
     # user=models.ForeignKey(User,on_delete=models.CASCADE)
     # product=models.ForeignKey(Product,on_delete=models.CASCADE)
