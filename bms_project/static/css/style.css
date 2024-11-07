@@ -261,7 +261,8 @@ li a{
     width: 100%;
     height: 500px;
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
+    
 
 }
 .fimg{
@@ -270,3 +271,9 @@ li a{
     margin-top: 3%;
     margin-left: 9%;
 }
+.rate_now{
+    text-decoration: none;
+    color:black;
+    
+}
+

@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- <link rel="stylesheet" href="bookmyshow.css"> -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white;">
-        <a class="navbar-brand" href="#"><img src="{% static 'image/st.png' %}" alt="" style="padding-left: 25%;"></a>
-        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
-            <!-- <span class="navbar-toggler-icon"></span> -->
+        <a class="navbar-brand" href="#"><img src="../static/image/bmslogo.png" alt="" style="padding-left: 25%;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> -->
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -39,34 +40,119 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">
                         <form action="" class="d-flex" style="height: 1%;padding-top: 2px;">
-                            <button class="btn text-light" style="background-color: rgb(219, 25, 25);width: 100px; padding-top: 0;position: relative;">Sing in</button>
-                          </form>
+                            <button class="btn text-light" style="background-color: rgb(219, 25, 25);width: 100px; padding:5px;position: relative;">Sign in</button>
+                        </form>
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li> -->
             </ul>
         </div>
     </nav>
-<div class="main">
-    <!-- <button class="menu-toggle">☰</button> -->
-    <ul>
-        <li><a href="">Movies</a></li>
-        <li><a href="">Stream</a></li>
-        <li><a href="">Events</a></li>
-        <li><a href="">Plays</a></li>
-        <li><a href="">Sports</a></li>
-        <li><a href="">Activities</a></li>
-        <li><a href="">Offers</a></li>
-        <li><a href="">gift cards</a></li>
-    </ul>
-</div>
-    <div class="bimg container-fluid mt-3" style="background-image: url({{data.bg_img.url}});">
-        <a href="" style="text-decoration: none;">
-            <img src="{{data.fg_img.url}}" alt="" class="fimg rounded" >
-            <h1 class="text-white">{{data.movie_name}}</h1>
-        </a>
+    <div class="main">
+        <ul>
+            <li><a href="">Movies</a></li>
+            <li><a href="">Stream</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Plays</a></li>
+            <li><a href="">Sports</a></li>
+            <li><a href="">Activities</a></li>
+            <li><a href="">ListYourShow</a></li>
+            <li><a href="">Corporates</a></li>
+            <li><a href="">Offers</a></li>
+            <li><a href="">Gift Cards</a></li>
+        </ul>
     </div>
+    <div class="image-fluid d-flex bimg " style="background-image: url({{data.bg_img.url}});">
+        <div class=" row align-items-center">
+            <div class="col-md-4">
+                <div class="movie-card" style="margin-left: 18%;margin-bottom: 3%;">
+                    <img src="{{data.fg_img.url}}" alt="venom" class="fimg rounded">
+                </div>
+            </div>
+            <div class="col-md-8 p-5">
+                <div class="movieinfo">
+                    <div class="movietitle">
+                        <h1 class="text-white"><b>{{data.movie_name}}</b></h1>
+                    </div>
+                    <div id="rating" class="d-flex align-items-center">
+                        <a href="" class="rate_now btn btn-light">Rate now</a>
+                    </div>
+                    <div class="lang row gap-4 mt-3">
+                        <div id="lang" class="col-9">
+                            <span class="language bg-white p-1">2D</span>
+                            <span class="language bg-white p-1">Malayalam, Hindi, Tamil, Kannada, Telugu</span>
+                        </div>
+                        <div id="lang" class="col-9">
+                            <span class="language text-white">{{data.duration}}</span>
+                            <span class="language text-white">{{data.category}}</span>
+                            <span class="language text-white">{{data.date}}</span>
+                        </div>
+                        <div id="lang" class="col-9">
+                            <a class="mt-5 bg-danger p-3 rounded-2" href="" style="text-decoration: none;color: white;">
+                                <b>Book tickets</b>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-4">
+        <h4><b>About the movie</b></h4>
+    </div>
+
+    <footer style="background-color: rgb(39, 38, 42);width: 100%;height:950px; top: 80px;position: relative;">
+        <h6 style="color: whitesmoke;padding-top: 40px;left: 10px;position: absolute;padding-left: 8%;"><i class="bi bi-shop-window">::</i><b>list Your Show</b>..... Got a show, event, activity or a great experience? Partner with us &amp; get listed on BookMyShow</h6>
+        <div class="customer">
+            <img src="{% static 'image/fo_img.jpg' %}" alt="" style="width: 100%;padding-top: 100px;position: absolute;">
+            <!-- <h1 style="font-size: 17px;left: 6%;padding-top: 40px;padding-left: 8%;color: rgb(193, 192, 192);position: absolute;top: 40px;"><i class="bi bi-envelope-fill"></i><i class="bi bi-pc-display-horizontal"></i><i class="bi bi-cash-stack"></i></h1> -->
+
+            <div class="fo" style="padding-top: 220px;position: absolute;padding-left: px;">
+                <div class="container mt-5">
+        <h6 class="text-white fw-light">MOVIES NOW SHOWING IN KOCHI</h6>
+        <div>
+            <p class="text-secondary fw-light">Bougaivillea | Vettaiyan | A.R.M| The Wild Robot | Kishkindha Kaandam | Jigra |Smile 2 |Meiyazhagan | Vicky Vidya Ka Woh Wala Video | Porattu Nadakam</p>
+        </div>
+        <h6 class="text-white mt-5 fw-light">UPCOMING MOVIES IN KOCHI</h6>
+            <div>
+                <p class="text-secondary fw-light">Love Reddy | Mama ki Lado | Settlement | Dhaka Escape | 1980 Lo Radhekrishna | Rocket Driver | Tabaah | Karuppu Petti | Sir (Tamil) | Paani</p>
+            </div>
+            
+        <h6 class="text-white fw-light mt-5">MOVIES BY LANGUAGE</h6>
+            <div>
+                <p class="text-secondary fw-light">Movies in English | Movies in Malayalam | Movies in Hindi | Movies in Tamil</p>
+            </div>
+
+        <h6 class="text-white fw-light mt-5">MOVIES NOW SHOWING</h6>
+        <div>
+            <p class="text-secondary fw-light">Vicky Vidya Ka Woh Wala Video | Jigra | The Wild Robot | Vettaiyan | Vettaiyan-The Hunter | Martin | Devara-Part 1 | Viswam | Bohurupi | Bougaivillea</p>
+        </div>
+
+
+        <h6 class="text-white fw-light mt-5">HELP</h6>
+        <div>
+            <p class="text-secondary fw-light">About Us | Contact Us | Current Opening | Press Release | Press Coverage | Sitemap | FAQs | Terms and Conditions | Privacy Policy</p>
+        </div>
+
+        <h6 class="text-white fw-light mt-5">BOOKMYSHOW</h6>
+        <div>
+            <p class="text-secondary fw-light">Trailers | Stream | Offers | List My Show | Gift Cards </p>
+        </div>
+            </div>
+            <div>
+                <img src="{% static 'image/logo.svg' %}" alt="" style="position: absolute;padding-top:5px;padding-left: 64%;">
+
+            </div>
+        </div>
+        
+        <div class="icon mt-5" style="display: block;">
+            <i class="bi bi-facebook" style="padding: 15px;"></i>
+            <i class="bi bi-whatsapp" style="padding: 15px;"></i>
+            <i class="bi bi-messenger" style="padding: 15px;"></i>
+            <i class="bi bi-instagram" style="padding: 15px;"></i>
+            <i class="bi bi-youtube"style="padding: 15px;"></i>
+        </div>
+        
+    </footer>
 </body>
 </html>
