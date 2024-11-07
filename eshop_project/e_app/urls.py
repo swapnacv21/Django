@@ -23,5 +23,7 @@ urlpatterns=[
 
     #------------------------------------------user-------------------------------------
     path('register',views.register),
+    path('user_home',views.user_home),
+    path('view_product/<id>',views.view_product),
     # path('bookings',views.bookings),
 ]

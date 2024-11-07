@@ -120,71 +120,75 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="card-container">
+                        {% for i in data %}
                         <div class="movie">
                             <div class="card">
-                                <a href="ARM.html"><img src="{% static 'image/img1.avif' %}" class="card-img" alt=""></a>
+                                <a href="view_movie/{{i.pk}}">
+                                    <img src="{{i.fg_img.url}}" class="card-img" alt="">
+                                </a>
                                 <div class="card-body">
                                     <ion-icon name="heart-sharp"></ion-icon>
                                 </div>
                             </div>
-                            <h3>A.R.M</h3>
-                            <p class="detail">Action/Adventure/Drama</p>
+                            <h3>{{i.movie_name}}</h3>
+                            <p class="detail">{{i.category}}</p>
                         </div>
+                        {% endfor %}
                 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img2.avif' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Joker:Folie a Deux</h3>
                             <p class="detail">Drama/Suspense/Thriller</p>
-                        </div>
+                        </div> -->
 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img3.avif' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Kishkindha Kaandam</h3>
                             <p class="detail">Mystery/Thriller</p>
-                        </div>
+                        </div> -->
 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img4.avif' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Devara - Part 1</h3>
                             <p class="detail">Action/Drama/Thriller</p>
-                        </div>
+                        </div> -->
 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img6.avif' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Oru kattil Oru muri</h3>
                             <p class="detail">Drama/Family/Romantic</p>
-                        </div>
+                        </div> -->
 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img7.avif' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Meiyazhagan</h3>
                             <p class="detail">Comedy/Drama</p>
-                        </div>
+                        </div> -->
 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img8.jpg' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Venom: The Last Dance</h3>
                             <p class="detail">Action/Adventure/Sci-Fi</p>
-                        </div>
-
+                        </div> -->
+<!-- 
                         <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img9.avif' %}" class="card-img" alt="">
@@ -192,22 +196,22 @@
                             </div>
                             <h3>Pushpaka Vimanam</h3>
                             <p class="detail">Fantasy/Thriller</p>
-                        </div>
+                        </div> -->
 
-                        <div class="movie">
+                        <!-- <div class="movie">
                             <div class="card">
                                 <img src="{% static 'image/img10.avif' %}" class="card-img" alt="">
                                 <div class="card-body"></div>
                             </div>
                             <h3>Lubber Pandhu</h3>
                             <p class="detail">Drama/Romantic/sports</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+            <!-- <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
                 <span class="carousel-control-next-icon bg-dark"></span>
-            </button>
+            </button> -->
         </div>
     </div>
 
