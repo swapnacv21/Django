@@ -73,7 +73,7 @@
                     <div class="movietitle">
                         <h1 class="text-white"><b>{{data.movie_name}}</b></h1>
                     </div>
-                    <div id="rating" class="d-flex align-items-center">
+                    <div id="rating" class="d-flex align-item-center">
                         <a href="" class="rate_now btn btn-light">Rate now</a>
                     </div>
                     <div class="lang row gap-4 mt-3">
@@ -99,6 +99,51 @@
 
     <div class="container p-4">
         <h4><b>About the movie</b></h4>
+
+    </div>
+
+    <!-- cast: -->
+    <div class="container p-5">
+        <h3><b>Cast</b></h3>
+        <div class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex gap-4 ">
+                        <div class="mt-3">
+                            {% for i in member %}
+                            {% if i.cast %}
+                            <img src="{{i.img.url}}" alt="" class="rounded-circle" style="width: 200px;height: 200px;">
+                            <figcaption>{{i.name}}</figcaption>
+                            <p>{{i.position}}</p>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- crew -->
+    <div class="container p-5">
+        <h3><b>Crew</b></h3>
+        <div class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex gap-2">
+                        <div class="mt-3">
+                            {% for i in member %}
+                            {% if i.crew %}
+                            <img src="{{i.img.url}}" alt="" class="rounded-circle" style="width: 200px;height: 200px;">
+                            <figcaption>{{i.name}}</figcaption>
+                            <p>{{i.position}}</p>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer style="background-color: rgb(39, 38, 42);width: 100%;height:950px; top: 80px;position: relative;">
