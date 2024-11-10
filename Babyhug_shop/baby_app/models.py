@@ -8,3 +8,5 @@ class Product(models.Model):
     price=models.IntegerField()
     offer_price=models.IntegerField()
     img=models.FileField()
+
+    

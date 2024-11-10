@@ -24,6 +24,19 @@ def shop_logout(req):
 
 def shop_home(req):
     if 'shop' in req.session:
-        return render(req,'shop/shop_home.html')
+        product=Product.objects.all()
+        return render(req,'shop/shop_home.html',{'products':product})
     else:
         return redirect(shop_login)
+    
+def add_product(req):
+    if req.method=='POST':
+        id=req.POST['pro_id']
+        name=req.POST['name']
+        price=req.POST['price']
+        offer_price=req.POST['o_price']
+        file=req.FILES['img']
+        data=Product.objects.create(product_id=id,product_name=name,price=price,offer_price=offer_price,img=file)
+        data.save()
+        return redirect(shop_home)
+    return render(req,'shop/add_product.html')
