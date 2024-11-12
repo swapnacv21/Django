@@ -9,9 +9,9 @@
 </head>
 <body>
   
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm" style="background-color:rgb(126, 215, 211);">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">E_Shop</a>
+            <a class="navbar-brand" href="#"><b>Baby Hug</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,27 +34,28 @@
         </div>
     </nav>
     
-    <h2>shop home page</h2>
-
-    <div class="container">
+    <!-- <h2>shop home page</h2> -->
+    <div class="container mt-5">
         <div class="row">
-            {% for i in product %}
+            {% for pro in products %}
             <div class="col-lg-4">
-                <div class="card">
-                    <img src="{{pro.img.url}}" alt="" class="card-img-top" style="width: 100%;height: 400px;">
+                <div class="card" style="height: 750px;">
+                    <img class="card-img-top" src="{{pro.img.url}}" alt="Card image" style="width:100%;height: 400px;">
                     <div class="card-body">
                         <h4 class="card-title">{{pro.product_name}}</h4>
-                        <p class="card-text">{{pro.price}}</p>
+                        <p class="card-text fw-light fw-secondary">{{pro.price}}</p>
                         <p class="card-text">{{pro.offer_price}}</p>
-                        <a href="#" class="btn btn-primary">See Profile</a>
+                        
+                        <div >
+                            <a href="edit_product/{{pro.pk}}" class="btn" style="background-color: rgb(186, 232, 230);width: 100%;">Edit</a>
+                            <a href="delete_product/{{pro.pk}}" class="btn mt-3" style="background-color: rgb(186, 232, 230);width: 100%;">Delete</a>
+                        </div>
+                        <p class="card-text mt-3">{{pro.dis}}</p>
                     </div>
                 </div>
             </div>
-
             {% endfor %}
-            
         </div>
-
     </div>
 </body>
 </html>

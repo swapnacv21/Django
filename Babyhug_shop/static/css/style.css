@@ -1,20 +1,20 @@
 body{
-    background-color:rgb(131, 131, 131);
+    background-color:whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
-    height:96vh;
+    height:100vh;
 }
 .login_div{
-    max-width: 400px;
+    max-width: 380px;
     width: 100%;
-    padding: 55px;
-    /* background-color:rgb(59, 55, 56); */
+    padding: 80px;
+    background-color:rgb(46, 160, 154);
     border-radius: 8px;
 }
 .login{
     text-align: center;
-    color: black;
+    color: whitesmoke;
 }
 input[type=text],select{
     width:70%;
@@ -38,7 +38,8 @@ input[type=password],select{
 }
 input[type=submit],select{
     width: 18%;
-    background-color:rgb(238, 225, 231);
+    background-color:rgb(6, 69, 66);
+    color: whitesmoke;
     
     padding: 15px 5px;
     border: none;
@@ -47,6 +48,7 @@ input[type=submit],select{
     
 }
 input[type=submit]:hover{
-    background-color: rgb(91, 84, 84);
+    background-color:  rgb(8, 94, 90);
     color: white;
 }
+
