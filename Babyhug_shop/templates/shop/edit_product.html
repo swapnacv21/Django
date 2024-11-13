@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color:rgb(46, 160, 154);
+        /* display: flex; */
+        /* justify-content: center; */
+        align-items: center;
+        /* height: 92vh; */
+        /* margin-top: 2%; */
+    }
+    .main_div{ 
+        /* max-width:400px ; */
+        /* width: 100%; */
+        /* padding:0 20px ; */
+        background-color:rgb(46, 160, 154) ;
+        /* border-radius:8px ; */
+        /* max-height: 590px; */
+        margin-left: 5%;
+    }
+
+    .add_pro{
+        text-align: center;
+        color: white;
+    }
+
+    input[type=text],select{
+        width:40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;  
+        border:none;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+        
+    }
+    input[type=number],select{
+        width:40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        
+        display: inline-block;  
+        border:none;
+        border-radius: 4px;
+        box-sizing: border-box;
+        
+    }
+
+    input[type=submit],select{
+        width: 8%;
+        background-color:rgb(6, 69, 66);
+        color: white;
+        margin-top: 5px;
+        padding: 15px 5px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10%;
+        
+        
+    }
+    input[type=submit]:hover{
+        background-color: rgb(8, 94, 90);
+        color: white;
+    }
+    input[type=file],select{
+        width:70%;
+        margin: 8px 0;
+        display: inline-block;     
+    }
+    b{
+        color: whitesmoke;
+    }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <h2 class="add_pro">Add Product</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <b>Product id : </b><p><input type="text" name="pro_id" id="" placeholder="product id" class="p_id" value="{{data.product_id}}"></p>
+            <b>Product name : </b><p><input type="text" name="name" id="" placeholder="product name" value="{{data.product_name}}"></p>
+            <b>Product discription : </b><p><input type="text" name="discription" id="" placeholder="discription" value="{{data.dis}}"></p>
+            <b>Price : </b><p><input type="number" name="price" id="" placeholder="price" value="{{data.price}}"></p>
+            <b>Offer Price : </b><p><input type="number" name="o_price" id="" placeholder="offer price" value="{{data.offer_price}}"></p>
+            <img src="{{data.img.url}}" alt="" style="width: 90px;">
+            <b>Product Image : </b><input type="file" name="img" id="" value="{{data.img}}">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</body>
+</html>

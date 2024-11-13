@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from .models import *
+import os
 
 # Create your views here.
 def shop_login(req):
@@ -42,4 +43,27 @@ def add_product(req):
         return redirect(shop_home)
     return render(req,'shop/add_product.html')
 
+def edit_product(req,id):
+    pro=Product.objects.get(pk=id)
+    if req.method=='POST':
+        e_id=req.POST['pro_id']
+        name=req.POST['name']
+        discription=req.POST['discription']
+        price=req.POST['price']
+        offer_price=req.POST['o_price']
+        file=req.FILES.get('img')
+        if file:
+            Product.objects.filter(pk=id).update(product_id=e_id,product_name=name,price=price,offer_price=offer_price,img=file,dis=discription)
+        else:
+            Product.objects.filter(pk=id).update(product_id=e_id,product_name=name,price=price,offer_price=offer_price,dis=discription)
+        return redirect(shop_home)
+    return render(req,'shop/edit_product.html',{'data':pro})
 
+
+def delete_product(req,id):
+    data=Product.objects.get(pk=id)
+    url=data.img.url
+    url=url.split('/')[-1]
+    os.remove('media/'+url)
+    data.delete()
+    return redirect(shop_home)
